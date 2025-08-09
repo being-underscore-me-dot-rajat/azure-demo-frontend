@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/api/*",
-      "serve": "https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net/api/{*}"
+      "serve": "https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net"
     }
   ]
 }
