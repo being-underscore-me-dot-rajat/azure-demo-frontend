@@ -1,17 +1,16 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from flask import Flask, send_from_directory
+import os
 
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__, static_folder="build", static_url_path="/")
 
 @app.route("/")
-def home():
-    return jsonify({"message": "Hello from Azure Flask Backend!"})
+def serve_index():
+    return send_from_directory(app.static_folder, "index.html")
 
-# Add this new route to match what the frontend expects
+# Your API routes
 @app.route("/api/hello")
-def api_hello():
-    return jsonify({"message": "Hello from Azure Flask Backend!"})
+def hello():
+    return {"message": "Hello from Flask + React!"}
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
