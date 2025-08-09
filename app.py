@@ -1,9 +1,16 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
+
 @app.route("/")
 def home():
+    return jsonify({"message": "Hello from Azure Flask Backend!"})
+
+# Add this new route to match what the frontend expects
+@app.route("/api/hello")
+def api_hello():
     return jsonify({"message": "Hello from Azure Flask Backend!"})
 
 if __name__ == "__main__":

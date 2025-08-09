@@ -2,7 +2,12 @@
   "routes": [
     {
       "route": "/api/*",
-      "rewrite": "https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net/api/{*path}"
+      "rewrite": "https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net/api/{*restOfPath}",
+      "allowedMethods": ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"]
     }
-  ]
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/css/*"]
+  }
 }
