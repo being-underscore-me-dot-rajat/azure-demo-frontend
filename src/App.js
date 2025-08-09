@@ -8,7 +8,7 @@ function App() {
 // fetch("https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net/api/hello")
 
 // New: call relative path
-fetch("/api/")
+fetch("/api/hello")
   .then(res => res.json())
   .then(data => setMessage(data.message));
 
