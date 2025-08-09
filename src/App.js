@@ -4,10 +4,7 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Old: calling full backend URL
-// fetch("https://demoweabapp-dccjdxazfabfdqhv.canadacentral-01.azurewebsites.net/api/hello")
 
-// New: call relative path
 fetch("/api/hello")
   .then(res => res.json())
   .then(data => setMessage(data.message))
