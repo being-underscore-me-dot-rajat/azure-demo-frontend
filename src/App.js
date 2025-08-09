@@ -10,11 +10,11 @@ function App() {
 // New: call relative path
 fetch("/api/hello")
   .then(res => res.json())
-  .then(data => setMessage(data.message));
-
+  .then(data => setMessage(data.message))
+  .then(console.log(message));
+  
       
   }, []);
-
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>{message || "Loading..."}</h1>
